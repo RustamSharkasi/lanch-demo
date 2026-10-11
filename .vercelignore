@@ -1,0 +1,5 @@
+# не публиковать служебные файлы
+*.md
+tools/
+.impeccable/
+.claude/

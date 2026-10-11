@@ -1,0 +1,5 @@
+.claude/
+.impeccable/review/
+.impeccable/questions/
+__pycache__/
+.vercel

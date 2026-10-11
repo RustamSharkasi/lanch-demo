@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ланч — бургеры и кофе весь день · демо-проект</title>
+  <meta name="description" content="Кафе «Ланч»: смэш-бургеры, такос, крылышки и кофе у городского парка. Концепт-сайт для портфолио — заведение, адрес и телефон вымышленные.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2b3134">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ланч — обед в любое время дня">
+  <meta property="og:description" content="Смэш-бургеры, такос, кофе и чек, который собирается прямо на сайте. Демо-проект.">
+  <meta property="og:image" content="img/demo/facade-front.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/handjet-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/pt-mono-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=20261011">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#menu">Перейти к меню</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <filter id="ink" x="-8%" y="-12%" width="116%" height="124%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="edge"/>
+    <feDisplacementMap in="SourceGraphic" in2="edge" scale="1.8" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.42" numOctaves="3" seed="3" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 22 -14.8" result="misses"/>
+    <feComposite in="rough" in2="misses" operator="out"/>
+  </filter>
+  <filter id="rough" x="-4%" y="-8%" width="108%" height="116%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" result="edge"/>
+    <feDisplacementMap in="SourceGraphic" in2="edge" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <symbol id="logo" viewBox="0 0 350 120">
+    <g fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 106c14-4 20-20 22-44l3-46h44v90"/>
+      <path d="M100 106l35-90 35 90M114 72h42"/>
+      <path d="M194 16v90M254 16v90M194 61h60"/>
+      <path d="M280 16v28c0 18 10 26 28 26h30M338 16v90"/>
+    </g>
+  </symbol>
+  <symbol id="mark" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="10"/>
+    <circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+    <path fill="none" stroke="currentColor" style="stroke: var(--mark-hand, currentColor)" stroke-width="9" stroke-linecap="round" d="M60 60V24M60 60l12-20"/>
+    <circle cx="60" cy="60" r="7" fill="currentColor" style="fill: var(--mark-hand, currentColor)"/>
+  </symbol>
+  <symbol id="lockup" viewBox="0 0 490 120">
+    <use href="#mark" width="120" height="120"/>
+    <use href="#logo" x="140" width="350" height="120"/>
+  </symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.6363.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.8053.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4224.3617 1.0577.4169 2.2265.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5.5 3.5h3l1.6 4.2-2 1.4a11.5 11.5 0 0 0 6.8 6.8l1.4-2 4.2 1.6v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.5 5.7a2 2 0 0 1 2-2.2Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21.5s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z"/><circle cx="12" cy="10.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h15M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4.5h14a1 1 0 0 1 1 1V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5.5a1 1 0 0 1 1-1ZM4 11h16M7 18v2M17 18v2"/><circle cx="8" cy="14.5" r="1" fill="currentColor"/><circle cx="16" cy="14.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 13l1.6-4.6A2 2 0 0 1 7.5 7h9a2 2 0 0 1 1.9 1.4L20 13v5H4v-5ZM4 13h16M6 18v2M18 18v2"/><circle cx="7.5" cy="15.5" r="1" fill="currentColor"/><circle cx="16.5" cy="15.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 9.5a13 13 0 0 1 18 0M6.5 13a8 8 0 0 1 11 0M10 16.5a3.2 3.2 0 0 1 4 0"/><circle cx="12" cy="19.5" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path stroke="currentColor" stroke-width="1.8" d="M3 10h18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 11v5"/><circle cx="12" cy="7.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+</svg>
+
+<div class="demo-bar" role="note">
+  <div class="wrap demo-bar__row">
+    <span class="demo-bar__tag">Демо</span>
+    <p>Концепт-сайт для портфолио. Кафе «Ланч» вымышленное<span class="demo-bar__more">: фотографии размыты, кнопки заказа и ссылки работают в демо-режиме</span>.</p>
+  </div>
+</div>
+
+<header class="top" id="top">
+  <div class="wrap top__row">
+    <a class="top__logo" href="#top" aria-label="Кафе «Ланч» — в начало">
+      <svg class="logo" width="123" height="30" aria-hidden="true"><use href="#lockup"/></svg>
+    </a>
+    <nav class="top__nav" aria-label="Разделы">
+      <a href="#menu">Меню</a>
+      <a href="#hits">Хиты</a>
+      <a href="#place">Место</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--paper btn--sm top__cta" href="#" data-demo="whatsapp">
+      <svg class="ico" width="16" height="16"><use href="#i-whatsapp"/></svg><span>Заказать</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<div class="stage">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__photo" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <h1 class="hero__title" id="hero-title">Кафе <span class="red">Ланч</span><br>обед в&nbsp;любое<br>время дня</h1>
+      <p class="hero__lede">Смэш-бургеры, такос, крылышки и&nbsp;кофе у&nbsp;городского парка. Соберите чек прямо на&nbsp;сайте и&nbsp;отправьте в&nbsp;мессенджер&nbsp;— заберёте навынос или привезём.</p>
+      <p class="status" id="status" data-open="08:00" data-close="23:00">
+        <span class="status__dot" aria-hidden="true"></span>
+        <span class="status__text">Ежедневно 08:00–23:00</span>
+      </p>
+      <div class="cta">
+        <a class="btn btn--paper btn--lg" href="#" data-demo="whatsapp">
+          <svg class="ico" width="18" height="18"><use href="#i-whatsapp"/></svg><span>Заказать в WhatsApp</span>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#" data-demo="telegram">
+          <svg class="ico" width="18" height="18"><use href="#i-telegram"/></svg><span>Telegram</span>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#" data-demo="phone">
+          <svg class="ico" width="18" height="18"><use href="#i-phone"/></svg><span>8 800 000-13-00</span>
+        </a>
+      </div>
+      <ul class="facts" aria-label="Коротко">
+        <li><svg class="ico" width="16" height="16"><use href="#i-pin"/></svg>ул. Садовая, 13 · у&nbsp;парка</li>
+        <li><svg class="ico" width="16" height="16"><use href="#i-bag"/></svg>Доставка и&nbsp;навынос</li>
+        <li><svg class="ico" width="16" height="16"><use href="#i-card"/></svg>Карта, наличные, QR</li>
+        <li><svg class="ico" width="16" height="16"><use href="#i-wifi"/></svg>Wi-Fi</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE (mobile / tablet) ============ -->
+  <section class="showcase" aria-label="Что у нас есть">
+    <ul class="showcase__track" id="showcase">
+      <li class="card" data-card>
+        <a class="card__link" href="#hits">
+          <span class="card__pics" role="img" aria-label="Актуальное: павильон кафе, часы работы и бургер (фото размыты)">
+          <img src="img/demo/cards/actual-1.jpg" width="400" height="600" alt="" loading="eager" decoding="async" class="is-on">
+          <img src="img/demo/cards/actual-2.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/actual-3.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/actual-4.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="card__name">Актуальное<svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+      <li class="card" data-card>
+        <a class="card__link" href="#cat-burger">
+          <span class="card__pics" role="img" aria-label="Бургеры: Smash, фирменный, с курицей (фото размыты)">
+          <img src="img/demo/cards/burgers-1.jpg" width="400" height="600" alt="" loading="eager" decoding="async" class="is-on">
+          <img src="img/demo/cards/burgers-2.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/burgers-3.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/burgers-4.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/burgers-5.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="card__name">Бургеры<svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+      <li class="card" data-card>
+        <a class="card__link" href="#cat-sandwich">
+          <span class="card__pics" role="img" aria-label="Сэндвичи и такос с курицей в разрезе (фото размыты)">
+          <img src="img/demo/cards/sandwiches-1.jpg" width="400" height="600" alt="" loading="eager" decoding="async" class="is-on">
+          <img src="img/demo/cards/sandwiches-2.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/sandwiches-3.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/sandwiches-4.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="card__name">Сэндвичи<svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+      <li class="card" data-card>
+        <a class="card__link" href="#cat-coffee">
+          <span class="card__pics" role="img" aria-label="Напитки: лимонады, авторские напитки, кофе (фото размыты)">
+          <img src="img/demo/cards/drinks-1.jpg" width="400" height="600" alt="" loading="eager" decoding="async" class="is-on">
+          <img src="img/demo/cards/drinks-2.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/drinks-3.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          <img src="img/demo/cards/drinks-4.jpg" width="400" height="600" alt="" loading="lazy" decoding="async">
+          </span>
+          <span class="card__name">Напитки<svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ THE CHECK (order receipt) ============ -->
+  <aside class="check-col" aria-label="Ваш чек">
+    <figure class="tile tile--a" data-drop style="--r:-6deg;--r0:-22deg">
+      <img src="img/demo/facade-front.jpg" width="685" height="915" alt="Павильон кафе у парка — фото намеренно размыто" loading="eager" fetchpriority="high">
+    </figure>
+    <figure class="tile tile--b" data-drop style="--r:5deg;--r0:20deg">
+      <img src="img/demo/burgers.jpg" width="360" height="485" alt="Бургеры с картошкой фри на крафте — фото размыто" loading="eager">
+    </figure>
+    <figure class="tile tile--c" data-drop style="--r:-3deg;--r0:14deg">
+      <img src="img/demo/latte.jpg" width="360" height="400" alt="Латте в руках у бариста — фото размыто" loading="eager">
+    </figure>
+
+    <div class="receipt" id="check" data-print>
+      <div class="receipt__edge receipt__edge--top" aria-hidden="true"></div>
+      <div class="receipt__paper">
+        <header class="receipt__head">
+          <svg class="logo receipt__logo" width="148" height="36" aria-hidden="true"><use href="#lockup"/></svg>
+          <p>Кафе «Ланч» · ул. Садовая, 13</p>
+          <p>8 800 000-13-00 · 08:00–23:00</p>
+          <p class="receipt__meta"><span>Чек №1300</span><span id="checkDate">сегодня</span></p>
+        </header>
+
+        <div class="receipt__body" aria-live="polite">
+          <h2 class="receipt__title">Ваш заказ</h2>
+          <ul class="lines" id="checkLines"></ul>
+
+          <div class="receipt__empty" id="checkEmpty">
+            <p class="receipt__error">Тут будет<br>ваш обед</p>
+            <p class="receipt__note">Нажмите «+» рядом с блюдом, и строка напечатается здесь.<span class="receipt__note-hits"> Или начните с хитов:</span></p>
+            <ul class="lines lines--suggest" id="checkHits">
+              <!-- HITS:START -->
+<li class="line line--suggest" data-name="Бургер Smash" data-price="560"><span class="line__name">Бургер Smash</span><span class="line__leader" aria-hidden="true"></span><span class="line__price">560</span><button class="add add--sm" type="button" data-add aria-label="Добавить Бургер Smash в чек"><svg class="ico" width="16" height="16"><use href="#i-plus"/></svg></button></li>
+<li class="line line--suggest" data-name="Бургер Ланч" data-price="320"><span class="line__name">Бургер Ланч</span><span class="line__leader" aria-hidden="true"></span><span class="line__price">320</span><button class="add add--sm" type="button" data-add aria-label="Добавить Бургер Ланч в чек"><svg class="ico" width="16" height="16"><use href="#i-plus"/></svg></button></li>
+<li class="line line--suggest line--variants" data-name="Такос с курицей"><span class="line__name">Такос с курицей</span><span class="line__variants"><button class="add add--variant add--sm" type="button" data-add data-variant="малый" data-price="380" aria-label="Добавить Такос с курицей (малый) за 380 ₽ в чек"><span>малый</span><b>380</b></button><button class="add add--variant add--sm" type="button" data-add data-variant="большой" data-price="450" aria-label="Добавить Такос с курицей (большой) за 450 ₽ в чек"><span>большой</span><b>450</b></button></span></li>
+<li class="line line--suggest" data-name="Куриные крылышки" data-price="430"><span class="line__name">Куриные крылышки</span><span class="line__leader" aria-hidden="true"></span><span class="line__price">430</span><button class="add add--sm" type="button" data-add aria-label="Добавить Куриные крылышки в чек"><svg class="ico" width="16" height="16"><use href="#i-plus"/></svg></button></li>
+<li class="line line--suggest" data-name="Креветки" data-price="390"><span class="line__name">Креветки</span><span class="line__leader" aria-hidden="true"></span><span class="line__price">390</span><button class="add add--sm" type="button" data-add aria-label="Добавить Креветки в чек"><svg class="ico" width="16" height="16"><use href="#i-plus"/></svg></button></li>
+<!-- HITS:END -->
+            </ul>
+          </div>
+
+          <p class="receipt__total"><span>Итого</span><span class="receipt__sum" id="checkTotal">0 ₽</span></p>
+          <p class="receipt__status" id="checkStatus">Голод: обнаружен</p>
+        </div>
+
+        <footer class="receipt__foot">
+          <a class="btn btn--board btn--lg sticker" id="sendWa" data-drop style="--r:-2deg;--r0:-14deg" href="#" data-demo="whatsapp">
+            <svg class="ico" width="18" height="18"><use href="#i-whatsapp"/></svg><span>Отправить в WhatsApp</span>
+          </a>
+          <div class="receipt__alt">
+            <a id="sendTg" href="#" data-demo="telegram">в Telegram</a>
+            <a href="#" data-demo="phone">позвонить</a>
+            <button type="button" id="clearCheck" hidden>очистить</button>
+          </div>
+          <div class="qr">
+            <svg class="qr__code" viewBox="0 0 33 33" width="84" height="84" role="img" aria-label="Демо QR-код" shape-rendering="crispEdges"><path fill="currentColor" d="M0 0h7v1h-7zM10 0h1v1h-1zM12 0h2v1h-2zM16 0h2v1h-2zM20 0h1v1h-1zM24 0h1v1h-1zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM10 1h3v1h-3zM15 1h1v1h-1zM18 1h2v1h-2zM21 1h4v1h-4zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h3v1h-3zM14 2h2v1h-2zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h4v1h-4zM14 4h3v1h-3zM20 4h3v1h-3zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM17 5h1v1h-1zM19 5h1v1h-1zM21 5h3v1h-3zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM8 7h4v1h-4zM13 7h1v1h-1zM15 7h2v1h-2zM19 7h4v1h-4zM24 7h1v1h-1zM0 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM14 8h1v1h-1zM16 8h7v1h-7zM25 8h2v1h-2zM29 8h3v1h-3zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM12 9h2v1h-2zM17 9h2v1h-2zM26 9h3v1h-3zM30 9h2v1h-2zM0 10h1v1h-1zM2 10h6v1h-6zM9 10h2v1h-2zM12 10h3v1h-3zM16 10h2v1h-2zM19 10h1v1h-1zM21 10h1v1h-1zM23 10h2v1h-2zM27 10h1v1h-1zM29 10h2v1h-2zM32 10h1v1h-1zM0 11h1v1h-1zM2 11h3v1h-3zM8 11h1v1h-1zM10 11h4v1h-4zM15 11h4v1h-4zM21 11h2v1h-2zM24 11h1v1h-1zM26 11h2v1h-2zM29 11h2v1h-2zM0 12h1v1h-1zM3 12h4v1h-4zM8 12h2v1h-2zM11 12h3v1h-3zM15 12h1v1h-1zM17 12h1v1h-1zM19 12h5v1h-5zM27 12h6v1h-6zM1 13h3v1h-3zM5 13h1v1h-1zM7 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM18 13h1v1h-1zM25 13h1v1h-1zM28 13h3v1h-3zM3 14h4v1h-4zM11 14h3v1h-3zM15 14h2v1h-2zM18 14h1v1h-1zM20 14h2v1h-2zM23 14h1v1h-1zM25 14h1v1h-1zM29 14h3v1h-3zM1 15h1v1h-1zM5 15h1v1h-1zM8 15h2v1h-2zM16 15h3v1h-3zM21 15h6v1h-6zM28 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h2v1h-2zM6 16h3v1h-3zM10 16h4v1h-4zM15 16h1v1h-1zM19 16h2v1h-2zM23 16h3v1h-3zM27 16h1v1h-1zM31 16h2v1h-2zM3 17h3v1h-3zM10 17h2v1h-2zM13 17h1v1h-1zM19 17h1v1h-1zM22 17h3v1h-3zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM0 18h1v1h-1zM2 18h9v1h-9zM17 18h2v1h-2zM20 18h1v1h-1zM23 18h7v1h-7zM0 19h6v1h-6zM7 19h2v1h-2zM10 19h1v1h-1zM12 19h2v1h-2zM21 19h4v1h-4zM29 19h2v1h-2zM32 19h1v1h-1zM0 20h1v1h-1zM2 20h2v1h-2zM5 20h2v1h-2zM8 20h4v1h-4zM15 20h1v1h-1zM18 20h1v1h-1zM20 20h4v1h-4zM26 20h1v1h-1zM30 20h1v1h-1zM0 21h2v1h-2zM5 21h1v1h-1zM9 21h1v1h-1zM12 21h2v1h-2zM19 21h2v1h-2zM23 21h3v1h-3zM27 21h1v1h-1zM30 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM3 22h1v1h-1zM5 22h2v1h-2zM8 22h2v1h-2zM12 22h3v1h-3zM18 22h2v1h-2zM21 22h1v1h-1zM23 22h6v1h-6zM30 22h2v1h-2zM0 23h1v1h-1zM2 23h3v1h-3zM9 23h2v1h-2zM14 23h5v1h-5zM21 23h1v1h-1zM24 23h2v1h-2zM27 23h3v1h-3zM31 23h2v1h-2zM0 24h2v1h-2zM4 24h6v1h-6zM14 24h1v1h-1zM18 24h2v1h-2zM21 24h1v1h-1zM23 24h6v1h-6zM30 24h3v1h-3zM8 25h1v1h-1zM10 25h2v1h-2zM13 25h1v1h-1zM16 25h2v1h-2zM20 25h1v1h-1zM22 25h3v1h-3zM28 25h1v1h-1zM30 25h1v1h-1zM0 26h7v1h-7zM9 26h2v1h-2zM17 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM23 26h2v1h-2zM26 26h1v1h-1zM28 26h2v1h-2zM32 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM11 27h1v1h-1zM13 27h1v1h-1zM16 27h6v1h-6zM24 27h1v1h-1zM28 27h5v1h-5zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM9 28h1v1h-1zM11 28h6v1h-6zM19 28h3v1h-3zM24 28h5v1h-5zM30 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM13 29h1v1h-1zM18 29h1v1h-1zM20 29h1v1h-1zM22 29h2v1h-2zM25 29h1v1h-1zM28 29h1v1h-1zM30 29h3v1h-3zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM10 30h3v1h-3zM14 30h2v1h-2zM18 30h1v1h-1zM21 30h2v1h-2zM25 30h8v1h-8zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM14 31h1v1h-1zM18 31h1v1h-1zM21 31h1v1h-1zM23 31h2v1h-2zM26 31h1v1h-1zM0 32h7v1h-7zM8 32h3v1h-3zM12 32h1v1h-1zM14 32h2v1h-2zM17 32h2v1h-2zM20 32h1v1h-1zM23 32h1v1h-1zM26 32h4v1h-4zM31 32h1v1h-1z"/></svg>
+            <p>В рабочей версии QR открывает чат с кафе, чтобы дозаказать с телефона</p>
+          </div>
+          <p class="receipt__thanks">Спасибо, что заглянули</p>
+          <p class="receipt__fine">Заказ подтверждает оператор в чате. Условия доставки, состав и наличие уточняйте там же.</p>
+        </footer>
+      </div>
+      <div class="receipt__edge receipt__edge--bottom" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <!-- ============ HITS ============ -->
+  <section class="hits" id="hits" aria-labelledby="hits-title">
+    <div class="hits__head">
+      <h2 class="h-board" id="hits-title">Хиты</h2>
+      <p class="hits__sub">То, что заказывают чаще всего. Нажмите «+» — и&nbsp;блюдо уже в&nbsp;вашем чеке.</p>
+    </div>
+    <ol class="board-list">
+      <li class="board-row" data-name="Бургер Smash" data-price="560">
+        <div class="board-row__main">
+          <span class="board-row__name">Бургер Smash</span>
+          <span class="board-row__meta">двойная котлета</span>
+        </div>
+        <span class="board-row__price">560 ₽</span>
+        <button class="add add--board" type="button" data-add aria-label="Добавить Бургер Smash в чек"><svg class="ico" width="22" height="22"><use href="#i-plus"/></svg></button>
+      </li>
+      <li class="board-row" data-name="Бургер Ланч" data-price="320">
+        <div class="board-row__main">
+          <span class="board-row__name">Бургер Ланч</span>
+          <span class="board-row__meta">наш фирменный</span>
+        </div>
+        <span class="board-row__price">320 ₽</span>
+        <button class="add add--board" type="button" data-add aria-label="Добавить Бургер Ланч в чек"><svg class="ico" width="22" height="22"><use href="#i-plus"/></svg></button>
+      </li>
+      <li class="board-row board-row--variants" data-name="Такос с курицей">
+        <div class="board-row__main">
+          <span class="board-row__name">Такос с курицей</span>
+          <span class="board-row__meta">малый или большой</span>
+        </div>
+        <div class="board-row__variants">
+          <button class="add add--variant add--board-variant" type="button" data-add data-variant="малый" data-price="380" aria-label="Добавить малый такос с курицей за 380 ₽"><span>мал.</span><b>380</b></button>
+          <button class="add add--variant add--board-variant" type="button" data-add data-variant="большой" data-price="450" aria-label="Добавить большой такос с курицей за 450 ₽"><span>бол.</span><b>450</b></button>
+        </div>
+      </li>
+      <li class="board-row" data-name="Куриные крылышки" data-price="430">
+        <div class="board-row__main">
+          <span class="board-row__name">Куриные крылышки</span>
+          <span class="board-row__meta">закуска</span>
+        </div>
+        <span class="board-row__price">430 ₽</span>
+        <button class="add add--board" type="button" data-add aria-label="Добавить куриные крылышки в чек"><svg class="ico" width="22" height="22"><use href="#i-plus"/></svg></button>
+      </li>
+      <li class="board-row" data-name="Креветки" data-price="390">
+        <div class="board-row__main">
+          <span class="board-row__name">Креветки</span>
+          <span class="board-row__meta">закуска</span>
+        </div>
+        <span class="board-row__price">390 ₽</span>
+        <button class="add add--board" type="button" data-add aria-label="Добавить креветки в чек"><svg class="ico" width="22" height="22"><use href="#i-plus"/></svg></button>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="menu__head">
+      <h2 class="h-paper" id="menu-title">Меню</h2>
+      <p class="menu__sub">Объём и размер — на бирках. Плюс кладёт блюдо в чек, чек уходит в мессенджер.</p>
+    </div>
+    <nav class="catbar" id="catbar" aria-label="Категории меню">
+      <ul class="catbar__list" id="catbarList"><!-- CATBAR:START -->
+<li><a class="catbar__chip" href="#cat-burger">Бургер</a></li>
+<li><a class="catbar__chip" href="#cat-snacks">Закуски</a></li>
+<li><a class="catbar__chip" href="#cat-sandwich">Сэндвичи</a></li>
+<li><a class="catbar__chip" href="#cat-food-extra">Допы к еде</a></li>
+<li><a class="catbar__chip" href="#cat-dessert">Десерты</a></li>
+<li><a class="catbar__chip" href="#cat-coffee">Кофе</a></li>
+<li><a class="catbar__chip" href="#cat-ice-coffee">Айс кофе</a></li>
+<li><a class="catbar__chip" href="#cat-warm">То, что согревает</a></li>
+<li><a class="catbar__chip" href="#cat-tea">Чаи</a></li>
+<li><a class="catbar__chip" href="#cat-lemonade">Лимонады</a></li>
+<li><a class="catbar__chip" href="#cat-shakes">Милкшейки</a></li>
+<li><a class="catbar__chip" href="#cat-drink-extra">Допы к напиткам</a></li>
+<li><a class="catbar__chip" href="#cat-drinks">Напитки</a></li>
+<!-- CATBAR:END --></ul>
+    </nav>
+    <div class="menu-receipt">
+      <div class="receipt__edge receipt__edge--top" aria-hidden="true"></div>
+      <div class="menu-receipt__paper">
+        <nav class="contents" aria-label="Категории меню">
+          <h3 class="contents__title">Содержание</h3>
+          <ol class="contents__list"><!-- INDEX:START -->
+<li class="contents__row"><a class="contents__link" href="#cat-burger"><span class="contents__name">Бургер</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">7</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-snacks"><span class="contents__name">Закуски</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">6</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-sandwich"><span class="contents__name">Сэндвичи</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">2</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-food-extra"><span class="contents__name">Допы к еде</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">2</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-dessert"><span class="contents__name">Десерты</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">1</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-coffee"><span class="contents__name">Кофе</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">7</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-ice-coffee"><span class="contents__name">Айс кофе</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">5</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-warm"><span class="contents__name">То, что согревает</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">2</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-tea"><span class="contents__name">Чаи</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">4</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-lemonade"><span class="contents__name">Лимонады</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">6</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-shakes"><span class="contents__name">Милкшейки</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">4</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-drink-extra"><span class="contents__name">Допы к напиткам</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">3</span></a></li>
+<li class="contents__row"><a class="contents__link" href="#cat-drinks"><span class="contents__name">Напитки</span><span class="line__leader" aria-hidden="true"></span><span class="contents__n">2</span></a></li>
+<!-- INDEX:END --></ol>
+        </nav>
+        <!-- MENU:START -->
+<section class="cat" id="cat-burger" aria-labelledby="cat-burger-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-burger-title">Бургер</h3><span class="cat__count">7</span></header>
+  <ul class="items">
+    <li class="item" data-name="Бургер Smash" data-price="560"><div class="item__main"><span class="item__name">Бургер Smash<span class="item__tags"><span class="tag tag--hit">хит</span><span class="tag">двойная котлета</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">560</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бургер Smash в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бургер с копчёным мясом" data-price="620"><div class="item__main"><span class="item__name">Бургер с копчёным мясом</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">620</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бургер с копчёным мясом в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бургер с курицей" data-price="420"><div class="item__main"><span class="item__name">Бургер с курицей</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">420</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бургер с курицей в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бургер с моцареллой" data-price="510"><div class="item__main"><span class="item__name">Бургер с моцареллой<span class="item__tags"><span class="tag">брусничный соус</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">510</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бургер с моцареллой в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бургер Ланч" data-price="320"><div class="item__main"><span class="item__name">Бургер Ланч<span class="item__tags"><span class="tag tag--hit">хит</span><span class="tag">фирменный</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бургер Ланч в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Шаурма с курицей" data-price="380"><div class="item__main"><span class="item__name">Шаурма с курицей</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">380</span></span></div><button class="add" type="button" data-add aria-label="Добавить Шаурма с курицей в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item item--variants" data-name="Такос с курицей"><div class="item__main"><span class="item__name">Такос с курицей<span class="item__tags"><span class="tag tag--hit">хит</span></span></span></div><div class="item__variants"><button class="add add--variant" type="button" data-add data-variant="малый" data-price="380" aria-label="Добавить Такос с курицей (малый) за 380 ₽ в чек"><span>малый</span><b>380</b></button><button class="add add--variant" type="button" data-add data-variant="большой" data-price="450" aria-label="Добавить Такос с курицей (большой) за 450 ₽ в чек"><span>большой</span><b>450</b></button></div></li>
+  </ul>
+</section>
+<section class="cat" id="cat-snacks" aria-labelledby="cat-snacks-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-snacks-title">Закуски</h3><span class="cat__count">6</span></header>
+  <ul class="items">
+    <li class="item" data-name="Картошка фри" data-price="170"><div class="item__main"><span class="item__name">Картошка фри</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">170</span></span></div><button class="add" type="button" data-add aria-label="Добавить Картошка фри в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Картофель по-деревенски" data-price="240"><div class="item__main"><span class="item__name">Картофель по-деревенски</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">240</span></span></div><button class="add" type="button" data-add aria-label="Добавить Картофель по-деревенски в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Наггетсы" data-price="240"><div class="item__main"><span class="item__name">Наггетсы<span class="item__tags"><span class="tag">6 шт</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">240</span></span></div><button class="add" type="button" data-add aria-label="Добавить Наггетсы в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Куриные крылышки" data-price="430"><div class="item__main"><span class="item__name">Куриные крылышки<span class="item__tags"><span class="tag tag--hit">хит</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">430</span></span></div><button class="add" type="button" data-add aria-label="Добавить Куриные крылышки в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Креветки" data-price="390"><div class="item__main"><span class="item__name">Креветки<span class="item__tags"><span class="tag tag--hit">хит</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">390</span></span></div><button class="add" type="button" data-add aria-label="Добавить Креветки в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Крокеты" data-price="390"><div class="item__main"><span class="item__name">Крокеты</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">390</span></span></div><button class="add" type="button" data-add aria-label="Добавить Крокеты в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-sandwich" aria-labelledby="cat-sandwich-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-sandwich-title">Сэндвичи</h3><span class="cat__count">2</span></header>
+  <ul class="items">
+    <li class="item" data-name="Сэндвич с курицей" data-price="380"><div class="item__main"><span class="item__name">Сэндвич с курицей</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">380</span></span></div><button class="add" type="button" data-add aria-label="Добавить Сэндвич с курицей в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Сэндвич с говядиной" data-price="420"><div class="item__main"><span class="item__name">Сэндвич с говядиной</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">420</span></span></div><button class="add" type="button" data-add aria-label="Добавить Сэндвич с говядиной в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-food-extra" aria-labelledby="cat-food-extra-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-food-extra-title">Допы к еде</h3><span class="cat__count">2</span></header>
+  <ul class="items">
+    <li class="item" data-name="Халапеньо" data-price="50"><div class="item__main"><span class="item__name">Халапеньо</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">50</span></span></div><button class="add" type="button" data-add aria-label="Добавить Халапеньо в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Соусы" data-price="80"><div class="item__main"><span class="item__name">Соусы</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">80</span></span></div><button class="add" type="button" data-add aria-label="Добавить Соусы в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-dessert" aria-labelledby="cat-dessert-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-dessert-title">Десерты</h3><span class="cat__count">1</span></header>
+  <ul class="items">
+    <li class="item" data-name="Круассан" data-price="380"><div class="item__main"><span class="item__name">Круассан</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">380</span></span></div><button class="add" type="button" data-add aria-label="Добавить Круассан в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-coffee" aria-labelledby="cat-coffee-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-coffee-title">Кофе</h3><span class="cat__count">7</span></header>
+  <ul class="items">
+    <li class="item" data-name="Эспрессо" data-price="190"><div class="item__main"><span class="item__name">Эспрессо</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">190</span></span></div><button class="add" type="button" data-add aria-label="Добавить Эспрессо в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Американо" data-price="220"><div class="item__main"><span class="item__name">Американо</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">220</span></span></div><button class="add" type="button" data-add aria-label="Добавить Американо в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Флэт уайт" data-price="240"><div class="item__main"><span class="item__name">Флэт уайт<span class="item__tags"><span class="tag">0,2 л</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">240</span></span></div><button class="add" type="button" data-add aria-label="Добавить Флэт уайт в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item item--variants" data-name="Капучино"><div class="item__main"><span class="item__name">Капучино</span></div><div class="item__variants"><button class="add add--variant" type="button" data-add data-variant="0,2 л" data-price="240" aria-label="Добавить Капучино (0,2 л) за 240 ₽ в чек"><span>0,2 л</span><b>240</b></button><button class="add add--variant" type="button" data-add data-variant="0,3 л" data-price="270" aria-label="Добавить Капучино (0,3 л) за 270 ₽ в чек"><span>0,3 л</span><b>270</b></button></div></li>
+    <li class="item" data-name="Латте" data-price="270"><div class="item__main"><span class="item__name">Латте</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">270</span></span></div><button class="add" type="button" data-add aria-label="Добавить Латте в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item item--variants" data-name="Раф"><div class="item__main"><span class="item__name">Раф</span></div><div class="item__variants"><button class="add add--variant" type="button" data-add data-variant="0,2 л" data-price="270" aria-label="Добавить Раф (0,2 л) за 270 ₽ в чек"><span>0,2 л</span><b>270</b></button><button class="add add--variant" type="button" data-add data-variant="0,4 л" data-price="310" aria-label="Добавить Раф (0,4 л) за 310 ₽ в чек"><span>0,4 л</span><b>310</b></button></div></li>
+    <li class="item" data-name="Фильтр-кофе" data-price="240"><div class="item__main"><span class="item__name">Фильтр-кофе<span class="item__tags"><span class="tag">0,2 л</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">240</span></span></div><button class="add" type="button" data-add aria-label="Добавить Фильтр-кофе в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-ice-coffee" aria-labelledby="cat-ice-coffee-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-ice-coffee-title">Айс кофе</h3><span class="cat__count">5</span></header>
+  <ul class="items">
+    <li class="item" data-name="Эспрессо тоник" data-price="300"><div class="item__main"><span class="item__name">Эспрессо тоник</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">300</span></span></div><button class="add" type="button" data-add aria-label="Добавить Эспрессо тоник в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бамбл апельсин" data-price="300"><div class="item__main"><span class="item__name">Бамбл апельсин</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">300</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бамбл апельсин в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Бамбл гранат" data-price="300"><div class="item__main"><span class="item__name">Бамбл гранат</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">300</span></span></div><button class="add" type="button" data-add aria-label="Добавить Бамбл гранат в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Айс латте" data-price="300"><div class="item__main"><span class="item__name">Айс латте</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">300</span></span></div><button class="add" type="button" data-add aria-label="Добавить Айс латте в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Айс урбеч" data-price="380"><div class="item__main"><span class="item__name">Айс урбеч</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">380</span></span></div><button class="add" type="button" data-add aria-label="Добавить Айс урбеч в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-warm" aria-labelledby="cat-warm-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-warm-title">То, что согревает</h3><span class="cat__count">2</span></header>
+  <ul class="items">
+    <li class="item" data-name="Какао" data-price="240"><div class="item__main"><span class="item__name">Какао<span class="item__tags"><span class="tag">0,2 л</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">240</span></span></div><button class="add" type="button" data-add aria-label="Добавить Какао в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Горячий шоколад" data-price="270"><div class="item__main"><span class="item__name">Горячий шоколад<span class="item__tags"><span class="tag">0,2 л</span></span></span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">270</span></span></div><button class="add" type="button" data-add aria-label="Добавить Горячий шоколад в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-tea" aria-labelledby="cat-tea-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-tea-title">Чаи</h3><span class="cat__count">4</span></header>
+  <ul class="items">
+    <li class="item item--variants" data-name="Чай листовой"><div class="item__main"><span class="item__name">Чай листовой</span></div><div class="item__variants"><button class="add add--variant" type="button" data-add data-variant="0,2 л" data-price="110" aria-label="Добавить Чай листовой (0,2 л) за 110 ₽ в чек"><span>0,2 л</span><b>110</b></button><button class="add add--variant" type="button" data-add data-variant="0,4 л" data-price="240" aria-label="Добавить Чай листовой (0,4 л) за 240 ₽ в чек"><span>0,4 л</span><b>240</b></button></div></li>
+    <li class="item" data-name="Облепиха-апельсин" data-price="270"><div class="item__main"><span class="item__name">Облепиха-апельсин</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">270</span></span></div><button class="add" type="button" data-add aria-label="Добавить Облепиха-апельсин в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Ягодный чай" data-price="270"><div class="item__main"><span class="item__name">Ягодный чай</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">270</span></span></div><button class="add" type="button" data-add aria-label="Добавить Ягодный чай в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Имбирь-лимон" data-price="270"><div class="item__main"><span class="item__name">Имбирь-лимон</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">270</span></span></div><button class="add" type="button" data-add aria-label="Добавить Имбирь-лимон в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-lemonade" aria-labelledby="cat-lemonade-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-lemonade-title">Лимонады</h3><span class="cat__count">6</span></header>
+  <ul class="items">
+    <li class="item" data-name="Манго-маракуйя" data-price="320"><div class="item__main"><span class="item__name">Манго-маракуйя</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Манго-маракуйя в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Вишня-гранат" data-price="320"><div class="item__main"><span class="item__name">Вишня-гранат</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Вишня-гранат в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Ягодный лимонад" data-price="320"><div class="item__main"><span class="item__name">Ягодный лимонад</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Ягодный лимонад в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Мохито классический" data-price="320"><div class="item__main"><span class="item__name">Мохито классический</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Мохито классический в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Мохито клубника" data-price="320"><div class="item__main"><span class="item__name">Мохито клубника</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">320</span></span></div><button class="add" type="button" data-add aria-label="Добавить Мохито клубника в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Колд брю" data-price="380"><div class="item__main"><span class="item__name">Колд брю</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">380</span></span></div><button class="add" type="button" data-add aria-label="Добавить Колд брю в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-shakes" aria-labelledby="cat-shakes-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-shakes-title">Милкшейки</h3><span class="cat__count">4</span></header>
+  <ul class="items">
+    <li class="item" data-name="Орео" data-price="310"><div class="item__main"><span class="item__name">Орео</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">310</span></span></div><button class="add" type="button" data-add aria-label="Добавить Орео в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Шоколадный" data-price="310"><div class="item__main"><span class="item__name">Шоколадный</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">310</span></span></div><button class="add" type="button" data-add aria-label="Добавить Шоколадный в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Клубничный" data-price="310"><div class="item__main"><span class="item__name">Клубничный</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">310</span></span></div><button class="add" type="button" data-add aria-label="Добавить Клубничный в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Банановый" data-price="310"><div class="item__main"><span class="item__name">Банановый</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">310</span></span></div><button class="add" type="button" data-add aria-label="Добавить Банановый в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-drink-extra" aria-labelledby="cat-drink-extra-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-drink-extra-title">Допы к напиткам</h3><span class="cat__count">3</span></header>
+  <ul class="items">
+    <li class="item" data-name="Сироп" data-price="40"><div class="item__main"><span class="item__name">Сироп</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">40</span></span></div><button class="add" type="button" data-add aria-label="Добавить Сироп в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Маршмэллоу" data-price="50"><div class="item__main"><span class="item__name">Маршмэллоу</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">50</span></span></div><button class="add" type="button" data-add aria-label="Добавить Маршмэллоу в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Безлактозное молоко" data-price="80"><div class="item__main"><span class="item__name">Безлактозное молоко</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">80</span></span></div><button class="add" type="button" data-add aria-label="Добавить Безлактозное молоко в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<section class="cat" id="cat-drinks" aria-labelledby="cat-drinks-title">
+  <header class="cat__head"><h3 class="cat__title" id="cat-drinks-title">Напитки</h3><span class="cat__count">2</span></header>
+  <ul class="items">
+    <li class="item" data-name="Вода без газа / с газом" data-price="90"><div class="item__main"><span class="item__name">Вода без газа / с газом</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">90</span></span></div><button class="add" type="button" data-add aria-label="Добавить Вода без газа / с газом в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+    <li class="item" data-name="Кока-кола" data-price="140"><div class="item__main"><span class="item__name">Кока-кола</span><span class="item__end"><span class="item__leader" aria-hidden="true"></span><span class="item__price">140</span></span></div><button class="add" type="button" data-add aria-label="Добавить Кока-кола в чек"><svg class="ico" width="18" height="18"><use href="#i-plus"/></svg></button></li>
+  </ul>
+</section>
+<!-- MENU:END -->
+        <p class="menu-receipt__end">конец меню · приятного аппетита</p>
+      </div>
+      <div class="receipt__edge receipt__edge--bottom" aria-hidden="true"></div>
+    </div>
+  </section>
+
+</div><!-- /stage -->
+
+<!-- ============ DAY ============ -->
+<section class="day" aria-labelledby="day-title">
+  <div class="wrap">
+    <h2 class="h-board" id="day-title">Ланч весь день</h2>
+    <ol class="day__list">
+      <li class="moment">
+        <time class="moment__time">08:00</time>
+        <figure class="moment__photo"><img src="img/demo/latte.jpg" width="360" height="400" alt="Латте в стаканчике — фото размыто" loading="lazy"></figure>
+        <p class="moment__text">Открываемся. Фильтр, капучино, раф и круассан по дороге на работу или на прогулку в парк.</p>
+      </li>
+      <li class="moment">
+        <time class="moment__time">13:00</time>
+        <figure class="moment__photo"><img src="img/demo/burgers.jpg" width="360" height="485" alt="Бургеры с картошкой фри — фото размыто" loading="lazy"></figure>
+        <p class="moment__text">Обед: смэш с двойной котлетой, картошка фри, лимонад. Быстро, на крафте, в зале или навынос.</p>
+      </li>
+      <li class="moment">
+        <time class="moment__time">19:00</time>
+        <figure class="moment__photo"><img src="img/demo/guest-tray.jpg" width="255" height="340" alt="Поднос с такос в зале у окна — фото размыто" loading="lazy"></figure>
+        <p class="moment__text">Вечер у окна на парк: такос, крылышки, креветки и милкшейк. Или доставка домой: пишите в WhatsApp.</p>
+      </li>
+      <li class="moment">
+        <time class="moment__time">22:30</time>
+        <figure class="moment__photo"><img src="img/demo/poster.jpg" width="165" height="220" alt="Вход в кафе вечером — фото размыто" loading="lazy"></figure>
+        <p class="moment__text">Последние заказы. Работаем до 23:00 — каждый день, без выходных.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PLACE ============ -->
+<section class="place" id="place" aria-labelledby="place-title">
+  <div class="wrap place__grid">
+    <div class="place__info">
+      <h2 class="h-paper" id="place-title">Где мы</h2>
+      <dl class="spec">
+        <div class="spec__row">
+          <dt><svg class="ico" width="18" height="18"><use href="#i-pin"/></svg>Адрес</dt>
+          <dd><b>ул. Садовая, 13</b>. Белый павильон с&nbsp;чёрным козырьком у&nbsp;входа в&nbsp;городской парк.</dd>
+        </div>
+        <div class="spec__row">
+          <dt><svg class="ico" width="18" height="18"><use href="#i-clock"/></svg>Часы</dt>
+          <dd><b>Ежедневно 08:00–23:00</b>, без выходных.</dd>
+        </div>
+        <div class="spec__row">
+          <dt><svg class="ico" width="18" height="18"><use href="#i-bus"/></svg>Транспорт</dt>
+          <dd>Остановка «Парковая», около 250&nbsp;м пешком.</dd>
+        </div>
+        <div class="spec__row">
+          <dt><svg class="ico" width="18" height="18"><use href="#i-car"/></svg>Парковка</dt>
+          <dd>Рядом есть парковки, столики на улице у&nbsp;фасада.</dd>
+        </div>
+      </dl>
+      <div class="cta cta--paper">
+        <a class="btn btn--board" href="#" data-demo="yandex"><svg class="ico" width="18" height="18"><use href="#i-pin"/></svg><span>Маршрут в Яндекс Картах</span></a>
+        <a class="btn btn--outline" href="#" data-demo="2gis"><span>Открыть в 2ГИС</span><svg class="ico" width="18" height="18"><use href="#i-arrow"/></svg></a>
+      </div>
+      <figure class="quote">
+        <blockquote><p>Беру смэш с&nbsp;картошкой почти каждую неделю. Собираю чек прямо на&nbsp;сайте, отправляю в&nbsp;мессенджер&nbsp;— через двадцать минут забираю. Быстрее, чем дозвониться.</p></blockquote>
+        <figcaption>Анна, постоянный гость <span class="quote__demo">демо-отзыв</span></figcaption>
+      </figure>
+      <figure class="quote quote--short">
+        <blockquote><p>Лучший флэт уайт у&nbsp;парка. И&nbsp;круассан к&nbsp;нему.</p></blockquote>
+        <figcaption>Тимур <span class="quote__demo">демо-отзыв</span></figcaption>
+      </figure>
+    </div>
+    <div class="place__media">
+      <figure class="print">
+        <div class="print__img"><img src="img/demo/facade-bench.jpg" width="685" height="915" alt="Фасад кафе со скамейками вдоль окон — фото намеренно размыто" loading="lazy"></div>
+        <figcaption>Фасад со стороны парка</figcaption>
+      </figure>
+      <figure class="map">
+        <svg class="map__svg" viewBox="0 0 480 300" role="img" aria-label="Схема: кафе «Ланч» на улице Садовой у входа в городской парк, остановка «Парковая» в 250 метрах">
+          <defs>
+            <pattern id="mapDots" width="6" height="6" patternUnits="userSpaceOnUse"><circle class="map__dot" cx="3" cy="3" r=".9"/></pattern>
+          </defs>
+          <rect class="map__ground" width="480" height="300"/>
+          <g class="map__blocks">
+            <rect x="14" y="14" width="56" height="40" rx="2"/><rect x="84" y="14" width="52" height="62" rx="2"/>
+            <rect x="14" y="92" width="40" height="26" rx="2"/><rect x="70" y="108" width="66" height="14" rx="2"/>
+            <rect x="14" y="140" width="56" height="46" rx="2"/><rect x="80" y="140" width="58" height="46" rx="2"/>
+            <rect x="162" y="14" width="74" height="70" rx="2"/><rect x="162" y="96" width="74" height="80" rx="2"/>
+            <rect x="8" y="208" width="44" height="84" rx="2"/><rect x="68" y="208" width="74" height="84" rx="2"/>
+            <rect x="160" y="206" width="160" height="40" rx="2"/><rect x="160" y="262" width="160" height="34" rx="2"/>
+            <rect x="340" y="206" width="132" height="40" rx="2"/><rect x="340" y="262" width="132" height="34" rx="2"/>
+          </g>
+          <path class="map__park" d="M250 20C330 8 450 18 468 60c12 40 2 100-28 116H262c-22-26-30-116-12-156Z"/>
+          <g class="map__trees">
+            <circle cx="292" cy="58" r="6"/><circle cx="318" cy="120" r="7"/><circle cx="410" cy="132" r="6"/><circle cx="276" cy="140" r="5"/><circle cx="430" cy="78" r="5"/>
+          </g>
+          <g class="map__road map__road--minor">
+            <path class="map__casing" d="M0 130H150M60 196V300M330 196V300M150 254H480"/>
+            <path class="map__lane" d="M0 130H150M60 196V300M330 196V300M150 254H480"/>
+          </g>
+          <g class="map__road">
+            <path class="map__casing" d="M0 196H480M150 0V300M0 70l150 50"/>
+            <path class="map__lane" d="M0 196H480M150 0V300M0 70l150 50"/>
+          </g>
+          <path class="map__route" d="M124 196H256v-6"/>
+          <text class="map__label map__label--road" x="372" y="199.5">ул. Садовая</text>
+          <text class="map__label map__label--road" x="153.5" y="60" transform="rotate(-90 153.5 60)" text-anchor="middle">Парковый пр.</text>
+          <text class="map__label map__label--park" x="368" y="96" text-anchor="middle">Городской парк</text>
+          <g class="map__stop">
+            <rect x="106" y="204" width="18" height="18" rx="4"/>
+            <use href="#i-bus" x="108" y="206" width="14" height="14"/>
+          </g>
+          <text class="map__label" x="74" y="236">ост. «Парковая»</text>
+          <g class="map__pin">
+            <path d="M256 188c-14-16-22-26-22-38a22 22 0 0 1 44 0c0 12-8 22-22 38Z"/>
+            <use href="#mark" x="243" y="137" width="26" height="26"/>
+          </g>
+          <g class="map__tag">
+            <rect x="286" y="128" width="104" height="38" rx="3"/>
+            <text class="map__tag-name" x="296" y="147">Ланч</text>
+            <text class="map__tag-time" x="296" y="159">08:00–23:00</text>
+          </g>
+          <g class="map__scale">
+            <path d="M398 284h64M398 280v8M462 280v8"/>
+            <text class="map__label" x="430" y="276" text-anchor="middle">100 м</text>
+          </g>
+          <g class="map__north" transform="translate(452 40)">
+            <circle r="13"/>
+            <path d="M0-8l5 12-5-3-5 3Z"/>
+          </g>
+        </svg>
+        <figcaption>Схема проезда · <a href="#" data-demo="yandex">открыть в картах</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="social" aria-labelledby="social-title">
+  <div class="wrap">
+    <div class="social__head">
+      <h2 class="h-board" id="social-title">Ланч в кадре</h2>
+      <a class="btn btn--paper" href="#" data-demo="instagram"><svg class="ico" width="18" height="18"><use href="#i-instagram"/></svg><span>Смотреть Reels</span></a>
+    </div>
+    <ul class="reel">
+      <li><img src="img/demo/entrance.jpg" width="360" height="640" alt="Вход в кафе днём — фото размыто" loading="lazy"></li>
+      <li><img src="img/demo/barista-tee.jpg" width="214" height="380" alt="Бариста с питчером — фото размыто" loading="lazy"></li>
+      <li><img src="img/demo/guest-burger.jpg" width="191" height="340" alt="Бургер и картошка фри на столе — фото размыто" loading="lazy"></li>
+      <li><img src="img/demo/bite.jpg" width="169" height="300" alt="Бургер в руке — фото размыто" loading="lazy"></li>
+      <li><img src="img/demo/counter.jpg" width="151" height="269" alt="Напиток у стойки заказа — фото размыто" loading="lazy"></li>
+    </ul>
+    <p class="social__fine">В демо-версии все фотографии намеренно размыты. В рабочем сайте здесь живые кадры из соцсетей кафе.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTS / FOOTER ============ -->
+<footer class="foot" id="contacts">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <svg class="foot__mark" width="56" height="56" aria-hidden="true"><use href="#mark"/></svg>
+      <p class="foot__tag">Обед в&nbsp;любое время дня. Бургеры, такос и&nbsp;кофе у&nbsp;городского парка.</p>
+    </div>
+    <div class="foot__col">
+      <h2 class="foot__h">Заказ</h2>
+      <a class="foot__phone" href="#" data-demo="phone">8 800 000-13-00</a>
+      <div class="foot__links">
+        <a href="#" data-demo="whatsapp"><svg class="ico" width="18" height="18"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a href="#" data-demo="telegram"><svg class="ico" width="18" height="18"><use href="#i-telegram"/></svg>Telegram</a>
+      </div>
+    </div>
+    <div class="foot__col">
+      <h2 class="foot__h">Адрес и часы</h2>
+      <p>ул. Садовая, 13<br>у входа в городской парк</p>
+      <p>Ежедневно 08:00–23:00</p>
+      <div class="foot__links">
+        <a href="#" data-demo="yandex">Яндекс Карты</a>
+        <a href="#" data-demo="2gis">2ГИС</a>
+        <a href="#" data-demo="instagram">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot__mega" aria-hidden="true"><svg viewBox="0 0 350 120" preserveAspectRatio="xMidYMid meet"><use href="#logo"/></svg></div>
+  <div class="wrap foot__end">
+    <p>© 2026 Кафе «Ланч». Концепт-сайт для портфолио: заведение, адрес, телефон, цены и отзывы вымышленные.</p>
+    <p class="foot__ok">Приятного аппетита</p>
+  </div>
+</footer>
+</main>
+
+<!-- ============ MOBILE: bottom bar + the check as a sheet ============ -->
+<div class="sheet" id="checkSheet" role="dialog" aria-modal="true" aria-label="Ваш чек">
+  <div class="sheet__bar" id="checkSheetBar">
+    <span class="sheet__handle" aria-hidden="true"></span>
+    <button class="sheet__close" type="button" data-sheet-close aria-label="Закрыть чек"><svg class="ico" width="18" height="18"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="sheet__body" id="checkSheetBody"></div>
+</div>
+<div class="sheet-backdrop" id="checkBackdrop" data-sheet-close aria-hidden="true"></div>
+
+<div class="orderbar" id="orderbar">
+  <p class="orderbar__last" id="orderbarLast" aria-live="polite"></p>
+  <a class="orderbar__btn" href="#" data-demo="phone"><svg class="ico" width="20" height="20"><use href="#i-phone"/></svg><span>Звонок</span></a>
+  <a class="orderbar__btn" id="orderbarSend" href="#" data-demo="whatsapp"><svg class="ico" width="20" height="20"><use href="#i-whatsapp"/></svg><span>WhatsApp</span></a>
+  <button class="orderbar__sum" type="button" id="orderbarSum" aria-haspopup="dialog" aria-controls="checkSheet" aria-expanded="false">
+    <svg class="ico" width="22" height="22"><use href="#i-bag"/></svg>
+    <span class="orderbar__text">
+      <span class="orderbar__total" id="orderbarTotal">0 ₽</span>
+      <span class="orderbar__count" id="orderbarCount">Чек пуст</span>
+    </span>
+    <svg class="ico orderbar__arrow" width="18" height="18"><use href="#i-arrow"/></svg>
+  </button>
+</div>
+
+<div class="toast" id="demoToast" role="status" aria-live="polite" hidden>
+  <div class="toast__paper">
+    <p class="toast__head"><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-info"/></svg><span id="demoToastTitle">Демо-режим</span></p>
+    <p class="toast__text" id="demoToastText"></p>
+    <pre class="toast__msg" id="demoToastMsg" hidden></pre>
+    <button class="toast__close" type="button" id="demoToastClose" aria-label="Закрыть уведомление"><svg class="ico" width="16" height="16"><use href="#i-x"/></svg></button>
+  </div>
+</div>
+
+<script src="js/main.js?v=20261011" defer></script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T09:23:24Z",
+  "title": "Design System: Кафе «Ланч»",
+  "extensions": {
+    "colorMeta": {
+      "board": {
+        "role": "neutral",
+        "displayName": "Табло",
+        "purpose": "матовый чёрный с гофром — грунт hero, хитов, «Ланч весь день», Instagram и подвала",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "board-line": {
+        "role": "neutral",
+        "displayName": "Линия табло",
+        "purpose": "разделители и рамки на чёрном",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Панель",
+        "purpose": "подложка подсвеченной фото-плитки",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "bezel": {
+        "role": "neutral",
+        "displayName": "Безель",
+        "purpose": "2px кольцо вокруг плитки",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "on-board": {
+        "role": "neutral",
+        "displayName": "Белый на табло",
+        "purpose": "основной текст и заголовки на чёрном",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "on-board-2": {
+        "role": "neutral",
+        "displayName": "Второй на табло",
+        "purpose": "подзаголовки, подписи, навигация",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "on-board-3": {
+        "role": "neutral",
+        "displayName": "Третий на табло",
+        "purpose": "мелкий шрифт и иконки на чёрном",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Бумага",
+        "purpose": "термочек и бумажные секции",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "counter": {
+        "role": "neutral",
+        "displayName": "Прилавок",
+        "purpose": "поле под бумагой меню",
+        "tonalRamp": [
+          "#282824",
+          "#43433c",
+          "#616157",
+          "#818173",
+          "#9f9f93",
+          "#bcbcb4",
+          "#d9d9d4",
+          "#f3f3f2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Чернила",
+        "purpose": "текст и линии на бумаге",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Чернила, светлее",
+        "purpose": "второстепенный текст чека",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Чернила, мелкие",
+        "purpose": "мелкий шрифт и знак ₽",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Пунктир",
+        "purpose": "пунктирные линии и точечные лидеры",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Штемпельная краска",
+        "purpose": "только состояние: хит, ошибка, закрыто, добавлено",
+        "tonalRamp": [
+          "#430d0a",
+          "#701510",
+          "#a11e17",
+          "#d6281f",
+          "#e6554c",
+          "#ed8882",
+          "#f5bbb8",
+          "#fceae9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Заголовок табло",
+        "purpose": "Только слоган первого экрана (Handjet 900, капс)."
+      },
+      "headline": {
+        "displayName": "Заголовок раздела",
+        "purpose": "h2 разделов на табло и бумаге (Handjet 700)."
+      },
+      "title": {
+        "displayName": "Строка табло",
+        "purpose": "Названия хитов на чёрном (Handjet 800)."
+      },
+      "title-receipt": {
+        "displayName": "Шапка категории",
+        "purpose": "Названия категорий в меню-чеке (Handjet 700, как на печатном меню кафе)."
+      },
+      "head-receipt": {
+        "displayName": "Заголовок чека",
+        "purpose": "«Ваш заказ», «Содержание», «Спасибо» на чеке."
+      },
+      "body": {
+        "displayName": "Текст",
+        "purpose": "Весь читаемый текст и все цифры, включая цены (PT Mono)."
+      },
+      "label": {
+        "displayName": "Ярлык",
+        "purpose": "Капс с трекингом: статус, навигация, мета-строки чека."
+      },
+      "button": {
+        "displayName": "Кнопка",
+        "purpose": "Подписи кнопок, капс, трекинг .06em."
+      },
+      "fine": {
+        "displayName": "Мелкий шрифт",
+        "purpose": "Примечания на чеке и в подвале."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-lift",
+        "value": "0 18px 30px -14px rgba(0,0,0,.35)",
+        "purpose": "Бумага чека и меню чуть приподнята над прилавком/табло."
+      },
+      {
+        "name": "panel-lit",
+        "value": "0 0 0 2px #1d1d1d, 0 0 34px 4px rgba(255,255,255,.09), 0 26px 40px -14px rgba(0,0,0,.75)",
+        "purpose": "Подсвеченная фото-плитка на табло: безель, свет по кромке, тень вниз."
+      },
+      {
+        "name": "panel-lit-inner",
+        "value": "inset 0 0 22px rgba(255,255,255,.22)",
+        "purpose": "Внутренний блик плитки (::after поверх фото)."
+      },
+      {
+        "name": "panel-drag",
+        "value": "0 0 0 2px #1d1d1d, 0 0 40px 6px rgba(255,255,255,.12), 0 34px 52px -12px rgba(0,0,0,.85)",
+        "purpose": "Плитка, которую тянут: ярче свет, глубже тень."
+      },
+      {
+        "name": "bar-lift",
+        "value": "0 10px 24px -12px rgba(0,0,0,.6)",
+        "purpose": "Строка «+ позиция» над мобильной панелью заказа."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Все переходы состояний и оседание плитки после перетаскивания."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(.5, 0, .85, .4)",
+        "purpose": "Фаза падения плитки в keyframes drop."
+      },
+      {
+        "name": "print",
+        "value": "clip-path inset(0 0 100% 0) → inset(0); 1.6s steps(28, end) для чека, .45s linear для новой строки",
+        "purpose": "Единственная грамматика появления: термопечать сверху вниз."
+      },
+      {
+        "name": "drop",
+        "value": "keyframes drop .9s: −120vh, rotate(--r0) → land (−5deg) → bounce −10px (+2deg) → rest rotate(--r)",
+        "purpose": "Плитки первого экрана падают с массой и оседают; после animationend класс is-still."
+      },
+      {
+        "name": "stamp-land",
+        "value": "translateY(−36px) + opacity 0 → 0/1; .55s ease-out, opacity .25s linear",
+        "purpose": "Кнопка-стикер «Отправить» приземляется на чек последней."
+      },
+      {
+        "name": "bump",
+        "value": "scale 1 → 1.12 → 1; .35s ease-out",
+        "purpose": "Итог в мобильной панели при добавлении позиции."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: всё статично, чек без clip-path, плитки на месте",
+        "purpose": "Доступность."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Кнопка «бумага» (главная)",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Главное действие на табло: белая на чёрном, капс PT Mono; с иконкой WhatsApp.",
+      "html": "<a class=\"ds-btn ds-btn-paper\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z\"/></svg><span>Заказать в WhatsApp</span></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border:1.5px solid transparent; border-radius:6px; font:400 .875rem/1 'PT Mono','Courier New',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; white-space:nowrap; cursor:pointer; transition:transform .25s cubic-bezier(.16,1,.3,1), background-color .2s, color .2s, border-color .2s; } .ds-btn:hover { transform:translateY(-1px); } .ds-btn:active { transform:translateY(0) scale(.98); } .ds-btn:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } .ds-btn svg { width:1.15em; height:1.15em; flex:none; } .ds-btn-paper { background:#ffffff; color:#111111; } .ds-btn-paper:hover { background:#ededeb; } .ds-btn-paper:focus-visible { outline-color:#ffffff; }"
+    },
+    {
+      "name": "Кнопка-контур на табло",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Второстепенное действие на чёрном: прозрачная с полупрозрачной рамкой.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\"><span>Telegram</span></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border:1.5px solid transparent; border-radius:6px; font:400 .875rem/1 'PT Mono','Courier New',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; white-space:nowrap; cursor:pointer; transition:transform .25s cubic-bezier(.16,1,.3,1), background-color .2s, color .2s, border-color .2s; } .ds-btn:hover { transform:translateY(-1px); } .ds-btn:active { transform:translateY(0) scale(.98); } .ds-btn:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } .ds-btn svg { width:1.15em; height:1.15em; flex:none; } .ds-btn-ghost { border-color:rgba(255,255,255,.45); color:#ffffff; background:transparent; } .ds-btn-ghost:hover { border-color:#ffffff; background:rgba(255,255,255,.06); } .ds-btn-ghost:focus-visible { outline-color:#ffffff; }"
+    },
+    {
+      "name": "Кнопка «табло» на бумаге",
+      "kind": "button",
+      "refersTo": "button-board",
+      "description": "Главное действие на бумаге (в том числе стикер «Отправить» на чеке с фильтром #rough и наклоном −2°).",
+      "html": "<a class=\"ds-btn ds-btn-board\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z\"/></svg><span>Отправить в WhatsApp</span></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border:1.5px solid transparent; border-radius:6px; font:400 .875rem/1 'PT Mono','Courier New',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; white-space:nowrap; cursor:pointer; transition:transform .25s cubic-bezier(.16,1,.3,1), background-color .2s, color .2s, border-color .2s; } .ds-btn:hover { transform:translateY(-1px); } .ds-btn:active { transform:translateY(0) scale(.98); } .ds-btn:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } .ds-btn svg { width:1.15em; height:1.15em; flex:none; } .ds-btn-board { background:#0b0b0b; color:#ffffff; } .ds-btn-board:hover { background:#262626; }"
+    },
+    {
+      "name": "Кнопка-контур на бумаге",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Второстепенное действие на бумаге: чернильная рамка, инверсия при наведении.",
+      "html": "<a class=\"ds-btn ds-btn-outline\" href=\"#\"><span>Открыть в 2ГИС</span></a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 18px; border:1.5px solid transparent; border-radius:6px; font:400 .875rem/1 'PT Mono','Courier New',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; white-space:nowrap; cursor:pointer; transition:transform .25s cubic-bezier(.16,1,.3,1), background-color .2s, color .2s, border-color .2s; } .ds-btn:hover { transform:translateY(-1px); } .ds-btn:active { transform:translateY(0) scale(.98); } .ds-btn:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } .ds-btn svg { width:1.15em; height:1.15em; flex:none; } .ds-btn-outline { border-color:#111111; color:#111111; background:transparent; } .ds-btn-outline:hover { background:#111111; color:#ffffff; }"
+    },
+    {
+      "name": "Плюс «в чек»",
+      "kind": "button",
+      "refersTo": "add",
+      "description": "Круглая кнопка у каждой позиции; при добавлении на 650 мс становится красным штампом.",
+      "html": "<button class=\"ds-add\" type=\"button\" aria-label=\"Добавить в чек\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" d=\"M12 5v14M5 12h14\"/></svg></button>",
+      "css": ".ds-add { width:40px; height:40px; padding:0; display:inline-grid; place-items:center; border:1.5px solid #111111; border-radius:50%; background:none; color:#111111; cursor:pointer; transition:background-color .15s, color .15s, transform .2s cubic-bezier(.16,1,.3,1); } .ds-add:hover { background:#111111; color:#ffffff; } .ds-add:active { transform:scale(.92); } .ds-add:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } .ds-add.is-added { background:#d9291f; border-color:#d9291f; color:#ffffff; } .ds-add svg { width:18px; height:18px; }"
+    },
+    {
+      "name": "Вариант объёма/размера",
+      "kind": "chip",
+      "refersTo": "add-variant",
+      "description": "Кнопка-бирка «0,2 л · 220 ₽» для позиций с двумя ценами.",
+      "html": "<button class=\"ds-add-variant\" type=\"button\"><span>0,2 л</span><b>220</b></button>",
+      "css": ".ds-add-variant { display:inline-flex; align-items:baseline; gap:8px; padding:7px 10px; border:1.5px solid #111111; border-radius:4px; background:none; color:#111111; font:400 .8125rem/1 'PT Mono','Courier New',monospace; letter-spacing:.02em; cursor:pointer; transition:background-color .15s, color .15s; } .ds-add-variant span { color:#4b4b4b; } .ds-add-variant b { font-weight:400; } .ds-add-variant b::after { content:' ₽'; color:#6b6b6b; } .ds-add-variant:hover, .ds-add-variant:hover span, .ds-add-variant:hover b::after { background:#111111; color:#ffffff; } .ds-add-variant:focus-visible { outline:2px solid #d9291f; outline-offset:3px; }"
+    },
+    {
+      "name": "Бирка и штамп «хит»",
+      "kind": "chip",
+      "refersTo": "tag-hit",
+      "description": "Единый элемент-бирка (объём, «6 шт») и его красная версия «хит» — штамп с фильтром чернил и наклоном −2°.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\" aria-hidden=\"true\"><filter id=\"ds-ink\" x=\"-8%\" y=\"-12%\" width=\"116%\" height=\"124%\" color-interpolation-filters=\"sRGB\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"2\" seed=\"7\" result=\"edge\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"edge\" scale=\"1.8\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"rough\"/><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.42\" numOctaves=\"3\" seed=\"3\" result=\"grain\"/><feColorMatrix in=\"grain\" type=\"matrix\" values=\"0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 22 -14.8\" result=\"misses\"/><feComposite in=\"rough\" in2=\"misses\" operator=\"out\"/></filter></svg><span class=\"ds-tag\">0,2 л</span> <span class=\"ds-tag ds-tag-hit\">хит</span>",
+      "css": ".ds-tag { display:inline-block; padding:3px 6px 2px; border:1px solid #bdbdbd; border-radius:3px; font:400 .6875rem/1 'PT Mono','Courier New',monospace; letter-spacing:.05em; text-transform:uppercase; color:#4b4b4b; } .ds-tag-hit { background:#d9291f; border-color:#d9291f; color:#ffffff; filter:url(#ds-ink); transform:rotate(-2deg); }"
+    },
+    {
+      "name": "Строка чека",
+      "kind": "custom",
+      "refersTo": "receipt",
+      "description": "Позиция чека: количество, название, точечный лидер, сумма, кнопки −/+; при появлении печатается clip-reveal.",
+      "html": "<ul class=\"ds-lines\"><li class=\"ds-line\"><span class=\"ds-line-qty\">2×</span><span class=\"ds-line-name\">Бургер Smash</span><span class=\"ds-line-leader\"></span><span class=\"ds-line-price\">1 040</span><span class=\"ds-line-ctrl\"><button class=\"ds-qty\" type=\"button\" aria-label=\"Убрать одну\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" d=\"M5 12h14\"/></svg></button><button class=\"ds-qty\" type=\"button\" aria-label=\"Добавить ещё\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" d=\"M12 5v14M5 12h14\"/></svg></button></span></li></ul>",
+      "css": ".ds-lines { list-style:none; margin:0; padding:0 20px; background:#ffffff; color:#111111; font:400 .9375rem/1.5 'PT Mono','Courier New',monospace; font-variant-numeric:tabular-nums; } .ds-line { display:flex; align-items:baseline; gap:8px; padding:6px 0; animation:ds-print .45s linear both; } .ds-line-qty { flex:none; min-width:2.4em; color:#4b4b4b; } .ds-line-leader { flex:1 1 16px; min-width:16px; align-self:flex-end; border-bottom:2px dotted #bdbdbd; transform:translateY(-.35em); } .ds-line-ctrl { display:inline-flex; gap:4px; margin-left:4px; align-self:center; } .ds-qty { width:30px; height:30px; padding:0; display:grid; place-items:center; border:1px solid #111111; border-radius:50%; background:none; color:#111111; cursor:pointer; transition:background-color .15s, color .15s; } .ds-qty:hover { background:#111111; color:#ffffff; } .ds-qty:focus-visible { outline:2px solid #d9291f; outline-offset:3px; } @keyframes ds-print { from { clip-path:inset(0 0 100% 0); } to { clip-path:inset(0 0 0 0); } }"
+    },
+    {
+      "name": "Край чека (перфорация)",
+      "kind": "custom",
+      "refersTo": "receipt",
+      "description": "Верхняя и нижняя кромка любой бумаги: зубцы conic-gradient 16×8px, сама бумага без скруглений, чуть приподнята.",
+      "html": "<div class=\"ds-paper\"><div class=\"ds-edge ds-edge-top\"></div><div class=\"ds-paper-body\">Чек №1300 · 16.09.2026</div><div class=\"ds-edge ds-edge-bottom\"></div></div>",
+      "css": ".ds-paper { width:280px; color:#111111; font:400 .8125rem/1.5 'PT Mono','Courier New',monospace; text-transform:uppercase; letter-spacing:.06em; } .ds-edge { height:8px; background-repeat:repeat-x; background-size:16px 8px; } .ds-edge-top { background-image:conic-gradient(from -45deg at 50% 100%, #ffffff 0 90deg, transparent 90deg); } .ds-edge-bottom { background-image:conic-gradient(from 135deg at 50% 0, #ffffff 0 90deg, transparent 90deg); } .ds-paper-body { background:#ffffff; padding:16px 20px; box-shadow:0 18px 30px -14px rgba(0,0,0,.35); border-top:1px dashed #bdbdbd; border-bottom:1px dashed #bdbdbd; }"
+    },
+    {
+      "name": "Навигация табло",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Ссылки шапки: капс PT Mono .8125rem, трекинг .08em, подчёркивание появляется при наведении.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Меню</a><a href=\"#\">Хиты</a><a href=\"#\">Место</a><a href=\"#\">Контакты</a></nav>",
+      "css": ".ds-nav { display:flex; gap:32px; padding:16px 24px; background:#0b0b0b; } .ds-nav a { font:400 .8125rem/1 'PT Mono','Courier New',monospace; text-transform:uppercase; letter-spacing:.08em; color:#c4c4c4; text-decoration:none; padding:6px 0; border-bottom:1px solid transparent; transition:color .2s, border-color .2s; } .ds-nav a:hover { color:#ffffff; border-bottom-color:#ffffff; } .ds-nav a:focus-visible { outline:2px solid #ffffff; outline-offset:3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Чек и табло",
+    "overview": "Весь сайт собран из двух предметов, которые стоят на стойке любого фастфуда: термочека и чёрного подсвеченного табло. Чек — белая бумага с моноширинным PT Mono, перфорированными краями, пунктирными отбивками и точечными лидерами до цены; на нём печатаются меню, заказ гостя и однобитные дизеринг-оттиски фотографий. Табло — матовый чёрный с едва заметным вертикальным гофром, как козырёк самого кафе, белый дот-матричный Handjet в заголовках и цветные фото как подсвеченные плитки с бликом по кромке. Ничего третьего в этом мире нет: каждый новый экран — либо бумага, либо табло.\n\nПлотность — как у настоящего чека: одна колонка, узкие строки, всё висит на левой рельсе контейнера; воздух дают крупные заголовки Handjet, а не отступы между карточками. Красный — не акцент, а чернила штампа: «ХИТ», «ТУТ БУДЕТ ВАШ ОБЕД», «ЗАКРЫТО», знак-часы в заголовке. Единственная грамматика появления — термопечать сверху вниз (clip-reveal ступенями) и падение плиток с массой; всё остальное на странице статично.\n\nОтвергнуто в сборке: категорийная раскладка «фото на весь экран + карточки меню + карта», градиенты и цветные подложки, скруглённые карточки с тенью, тёплые «кофейные» палитры, любая вторая гарнитура для чтения.",
+    "keyCharacteristics": [
+      "Два грунта: табло #0b0b0b с гофром и бумага #ffffff; третье поле — прилавок #e6e6e3 — существует только под бумагой меню.",
+      "Две гарнитуры, две роли: Handjet (700–900, капс) говорит с табло и в шапках чека; PT Mono — весь читаемый текст и все цифры.",
+      "Красный #d9291f — только штамп состояния (хит, ошибка, закрыто, добавлено) с SVG-фильтром #ink и наклоном −1,5…−2,5°.",
+      "Чек — сигнатурный компонент: перфорация, пунктирные линии, точечные лидеры, одна колонка, «печать» при появлении.",
+      "Плоский мир с двумя исключениями глубины: бумага чуть приподнята над прилавком, плитки на табло светятся изнутри.",
+      "Левая рельса: всё выравнивается по одной линии; центрирование живёт только внутри чека (шапка, QR, «спасибо»)."
+    ],
+    "rules": [
+      {
+        "name": "The Stamp-Only Red Rule",
+        "body": "Красный — чернила штампа, не акцент. Он появляется только как состояние: ХИТ, ТУТ БУДЕТ ВАШ ОБЕД, ЗАКРЫТО, «добавлено», выделение и фокус на бумаге. Ни заливок кнопок, ни линий, ни декоративных плашек. Тест: если убрать красный, у элемента должен пропасть смысл, а не «стать скучнее».",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Grounds Rule",
+        "body": "Любая поверхность — либо табло (#0b0b0b с гофром), либо бумага (#ffffff). Прилавок (#e6e6e3) допустим только как поле под бумагой; серые ступени — только текст и линии, никогда фон. Новых грунтов, градиентов и цветных подложек нет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Faded Ruble Rule",
+        "body": "Знак ₽ после цены всегда на ступень светлее числа: чернила-3 на бумаге, тусклый на табло. Само число — PT Mono с табличными цифрами.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Numbers Rule",
+        "body": "Цены, телефон, время, даты и счётчики набираются только PT Mono с tabular-nums. Handjet с его перечёркнутым нулём в цифрах не используется — даже в заголовке ноль «Ланч» заменён логотипом.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tracked Caps Rule",
+        "body": "Всё, что в капсе, получает трекинг: Handjet .01–.06em (шапки чека .12–.16em), ярлыки и кнопки PT Mono .06–.08em. Строчный текст — без трекинга.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Handjet — только заголовки, шапки и штампы (табло, категории, «Ваш заказ», «Тут будет ваш обед»), никогда ниже 1.05rem. Всё, что читается, — PT Mono. Третьей гарнитуры нет.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light Not Shadow Rule",
+        "body": "На табло глубина — это свет: плитка светится изнутри (кольцо 2px, ореол, внутренний блик), а не отбрасывает жёсткую тень. На бумаге глубина одна — бумага чуть приподнята над прилавком. Смещённых жёстких теней, карточек с тенью и нескольких уровней возвышения нет.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Ground Rule",
+        "body": "Секции плоские: между ними нет теней и переходов, только смена грунта или 1px линия табло. Единственная текстура мира — гофр табло; бумага чистая.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ink Edge Rule",
+        "body": "Штамп — это красная обводка 2–3px со скруглением 3–4px, фильтр #ink и наклон −1,5…−2,5°. Без фильтра и наклона это просто рамка — так не делать.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do начинать любую новую поверхность как табло (#0b0b0b с гофром) или бумагу (#ffffff); прилавок #e6e6e3 — только поле под бумагой.",
+      "Do набирать все числа PT Mono с tabular-nums и отделять знак ₽ на ступень светлее числа.",
+      "Do использовать Handjet только капсом, не ниже 1.05rem и с трекингом; всё читаемое — PT Mono.",
+      "Do держать левую рельсу: содержимое начинается на линии gutter; центрирование — только внутри чека.",
+      "Do делать красное штампом: обводка или заливка красным + фильтр #ink + наклон −1,5…−2,5° для слов-состояний (ХИТ, ОШИБКА, ЗАКРЫТО).",
+      "Do строить списки как строки чека: название — точечный лидер — цена — круглый «+»; блоки разделять пунктиром 1px.",
+      "Do давать фото на табло кольцо безеля и ореол света; на бумаге печатать их однобитным дизерингом или в рамке 1px с полем 8px.",
+      "Do оставлять одну грамматику появления: термопечать (clip-path ступенями) и падение плиток; при reduced motion — статика.",
+      "Do держать кнопки 6px, PT Mono .875rem/.06em капс, 14px 18px; главная на табло — бумажная, главная на бумаге — цвета табло."
+    ],
+    "donts": [
+      "Don't использовать красный для кнопок, ссылок, линий, фонов или украшения; второго акцентного цвета нет.",
+      "Don't добавлять градиенты, цветные подложки, тёплые «кофейные» палитры или третий грунт.",
+      "Don't набирать Handjet цены, телефон, даты, время и основной текст; ноль Handjet не показывать.",
+      "Don't строить карточки: никаких скруглённых блоков с тенью, фото-карточек с текстом поверх; меню — лента чека, хиты — строки табло.",
+      "Don't отбрасывать жёсткие смещённые тени и городить уровни возвышения; глубина — только подъём бумаги или свет панели.",
+      "Don't придумывать новые анимации появления (fade-up, slide-in, параллакс); только печать и падение.",
+      "Don't растягивать фотографии низкого разрешения на весь экран: плитки до 248px, отпечатки до 240px, панели только в сетках.",
+      "Don't ставить кикеры и надзаголовки над заголовками разделов: h2 стоит один, подзаголовок PT Mono — рядом или под ним; мета-строка «Чек №1300» принадлежит чеку, а не заголовку.",
+      "Don't добавлять формы, корзины, оплату, рейтинги — заказ уходит ссылкой в WhatsApp/Telegram/звонок."
+    ]
+  }
+}
